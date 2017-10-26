@@ -1,0 +1,22 @@
+* {
+    padding: 10px;
+    margin: 0px;
+}
+
+
+#wrapper {
+    width: 970px;
+    height: 1000px;
+    margin: 0px;
+    padding: 0px;
+    background: white;
+    text-align: center;
+}
+
+img {
+    width: 102px;
+    margin: 0px;
+    padding: 0px;
+
+}
+
