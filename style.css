@@ -4,19 +4,31 @@
 }
 
 
-#wrapper {
-    width: 970px;
-    height: 1000px;
+#pokemonimg {
+    width: 600px;
+    height: 220px;
     margin: 0px;
     padding: 0px;
     background: white;
     text-align: center;
+    display: inline-block;
+    border: 1px solid black;
 }
 
 img {
     width: 102px;
     margin: 0px;
     padding: 0px;
+    display: inline-block;
+}
 
+#pokemoninfo {
+   height: 220px;
+   width: 200px;
+   border: 1px solid black;
+   display: inline-block;
+   vertical-align: top;
+   padding: 0px;
+   margin: 0px 0px 20px 0px;
 }
 

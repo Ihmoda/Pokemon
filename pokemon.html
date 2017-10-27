@@ -10,23 +10,60 @@
 
     <script>
     
+    
         $(document).ready(function(){
-            for (var number = 1; number <= 151; number++){
-                string = "<img src='http://pokeapi.co/media/img/" + number + ".png'>"
-                $("#wrapper").append(string);
+            for (var number = 1; number <= 10; number++){
+                string = "<img value=" + number + " src='http://pokeapi.co/media/img/" + number + ".png'>"
+                $("#pokemonimg").append(string);
             }
         });
     
+        
+        $(document).on('click', 'img', function(){
+
+            var num = $(this).attr("value");
+            var url = "https://pokeapi.co/api/v2/pokemon/"+num+"/";
+            $.get(url, function(res) { 
+
+                var name = res.name;
+                name = name.charAt(0).toUpperCase() + name.substr(1);
+                $("#pokemoninfo h1").text(name);
+                console.log(res.types[0].type.name);
+                $("#height").text("Height:" + res.height);
+                $("#weight").text("Weight:" + res.weight);
+                var typestring = "";
+                
+                for (donuts in res.types){
+
+                    if (typestring.length > 1){
+                        typestring += ", "
+                    }
+
+                    typestring += res.types[donuts].type.name;
+                }
+
+                $("#types").text("Types: " + typestring);
+
+            }, "json");
+            
+        });
     
     </script>
     
 </head>
 <body>
 
-    <div id="wrapper">
+    <div id="pokemonimg">
 
 
+    </div>
 
+    <div id="pokemoninfo">
+        <h1>Bulbasaur</h1>
+        <p id="types"></p>
+        <p id="height"></p>
+        <p id="weight"></p>
+            
     </div>
 
     
